@@ -1,4 +1,6 @@
-package Layout.models.FrontEnd.FormDisplay;
+package Layout.models.FrontEnd.MainLayout.Pages;
+
+import java.awt.event.ActionEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -8,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 public class LoginForm extends JFrame {
         private JButton btnDangNhap;
@@ -23,6 +26,7 @@ public class LoginForm extends JFrame {
         private JPasswordField txMatKhau;
         private JTextField txTenDangNhap;
         private JButton btnDangXuat;
+        private JToggleButton toggleButton;
 
         public LoginForm() {
 
@@ -52,7 +56,9 @@ public class LoginForm extends JFrame {
                 lbHeader = new JLabel();
                 lbAva = new JLabel();
                 btnDangXuat = new JButton();
-
+                toggleButton = new JToggleButton();
+                toggleButton = new JToggleButton(new ImageIcon(",../../../image/save.png"));
+                toggleButton.setBounds(260, 50, 30, 30);
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                 plForm.setBackground(new java.awt.Color(51, 51, 51));
@@ -69,7 +75,7 @@ public class LoginForm extends JFrame {
                 });
                 btnDangXuat.setIcon(new javax.swing.ImageIcon(
                                 getClass().getResource("../../../images/icons8_cancel_30px_1.png")));
-                btnDangXuat.setText("Đăng xuất");
+                btnDangXuat.setText("Thoát");
                 btnDangXuat.setToolTipText("Thoát chương trình");
                 btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,6 +291,18 @@ public class LoginForm extends JFrame {
 
         private void cancelActionPerformed(java.awt.event.ActionEvent event) {
                 System.exit(0);
+        }
+
+        @Override
+        public void showPassWord(ActionEvent e) {
+                if (toggleButton.isSelected()) {
+                        txMatKhau.setVisible(false);
+                        txMatKhau.setText(new String(txMatKhau.getPassword()));
+                        txMatKhau.setVisible(true);
+                } else {
+                        txMatKhau.setVisible(false);
+                        toggleButton.setVisible(true);
+                }
         }
 
         public static void main(String[] args) {
