@@ -1,7 +1,5 @@
 package Layout.models.FrontEnd.MainLayout.Pages;
 
-import java.awt.event.ActionEvent;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,7 +34,7 @@ public class LoginForm extends JFrame {
                                 getClass().getResource("../../../images/icons8_windows_phone_store_30px.png"));
                 setIconImage(logo.getImage());
                 initComponents();
-                // setUndecorated(true);
+                setUndecorated(true);
                 this.setLocationRelativeTo(null);
 
         }
@@ -293,21 +291,20 @@ public class LoginForm extends JFrame {
                 System.exit(0);
         }
 
-        @Override
-        public void showPassWord(ActionEvent e) {
-                if (toggleButton.isSelected()) {
-                        txMatKhau.setVisible(false);
-                        txMatKhau.setText(new String(txMatKhau.getPassword()));
-                        txMatKhau.setVisible(true);
-                } else {
-                        txMatKhau.setVisible(false);
-                        toggleButton.setVisible(true);
-                }
-        }
+        // @Override
+        // public void showPassWord(ActionEvent e) {
+        // if (toggleButton.isSelected()) {
+        // txMatKhau.setVisible(false);
+        // txMatKhau.setText(new String(txMatKhau.getPassword()));
+        // txMatKhau.setVisible(true);
+        // } else {
+        // txMatKhau.setVisible(false);
+        // toggleButton.setVisible(true);
+        // }
+        // }
 
         public static void main(String[] args) {
                 new LoginForm().setVisible(true);
-                ;
-                ;
+
         }
 }

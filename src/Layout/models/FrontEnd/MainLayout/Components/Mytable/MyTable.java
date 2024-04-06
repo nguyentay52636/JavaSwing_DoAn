@@ -98,7 +98,6 @@ public class MyTable extends JPanel {
         model.setRowCount(0);
     }
 
-    // https://www.codejava.net/java-se/swing/setting-column-width-and-row-height-for-jtable
     public void setColumnsWidth(double[] percentages) {
 
         double total = 0;
@@ -112,7 +111,6 @@ public class MyTable extends JPanel {
         }
     }
 
-    // https://stackoverflow.com/questions/17627431/auto-resizing-the-jtable-column-widths
     public void resizeColumnWidth() {
         final TableColumnModel columnModel = table.getColumnModel();
         for (int column = 0; column < table.getColumnCount(); column++) {

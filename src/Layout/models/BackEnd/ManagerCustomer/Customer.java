@@ -1,53 +1,54 @@
 package Layout.models.BackEnd.ManagerCustomer;
 
 public class Customer {
-String codeKH , nameKH , address,phoneNumber , status ;
+    String maKH, tenKH, diaChi, soDT, trangThai;
 
-public Customer(String codeKH, String nameKH, String address, String phoneNumber, String status) {
-    this.codeKH = codeKH;
-    this.nameKH = nameKH;
-    this.address = address;
-    this.phoneNumber = phoneNumber;
-    this.status = status;
-}
+    public Customer(String maKH, String tenKH, String diaChi, String soDT, String trangThai) {
+        this.maKH = maKH;
+        this.tenKH = tenKH;
+        this.diaChi = diaChi;
+        this.soDT = soDT;
+        this.trangThai = trangThai;
+    }
 
-public String getCodeKH() {
-    return codeKH;
-}
+    public String getMaKH() {
+        return maKH;
+    }
 
-public void setCodeKH(String codeKH) {
-    this.codeKH = codeKH;
-}
+    public void setMaKH(String maKH) {
+        this.maKH = maKH;
+    }
 
-public String getNameKH() {
-    return nameKH;
-}
+    public String getTenKH() {
+        return tenKH;
+    }
 
-public void setNameKH(String nameKH) {
-    this.nameKH = nameKH;
-}
+    public void setTenKH(String tenKH) {
+        this.tenKH = tenKH;
+    }
 
-public String getAddress() {
-    return address;
-}
+    public String getDiaChi() {
+        return diaChi;
+    }
 
-public void setAddress(String address) {
-    this.address = address;
-}
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
 
-public String getPhoneNumber() {
-    return phoneNumber;
-}
+    public String getSoDT() {
+        return soDT;
+    }
 
-public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
-}
+    public void setSoDT(String soDT) {
+        this.soDT = soDT;
+    }
 
-public String getStatus() {
-    return status;
-}
+    public String getTrangThai() {
+        return trangThai;
+    }
 
-public void setStatus(String status) {
-    this.status = status;
-} 
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
 }

@@ -1,56 +1,56 @@
 package Layout.models.BackEnd.ManagerProducrt;
 
 public class Product {
-    String codeSP, nameSP;
-    Float price;
-    int quantity, status;
+    String maSP, tenSP;
+    Float gia;
+    int soLuong, trangThai;
 
-    public Product(String codeSP, String nameSP, Float price, int quantity, int status) {
-        this.codeSP = codeSP;
-        this.nameSP = nameSP;
-        this.price = price;
-        this.quantity = quantity;
-        this.status = status;
+    public Product(String maSP, String tenSP, Float gia, int soLuong, int trangThai) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+        this.soLuong = soLuong;
+        this.trangThai = trangThai;
     }
 
-    public String getCodeSP() {
-        return codeSP;
+    public String getMaSP() {
+        return maSP;
     }
 
-    public void setCodeSP(String codeSP) {
-        this.codeSP = codeSP;
+    public void setMaSP(String maSP) {
+        this.maSP = maSP;
     }
 
-    public String getNameSP() {
-        return nameSP;
+    public String getTenSP() {
+        return tenSP;
     }
 
-    public void setNameSP(String nameSP) {
-        this.nameSP = nameSP;
+    public void setTenSP(String tenSP) {
+        this.tenSP = tenSP;
     }
 
-    public Float getPrice() {
-        return price;
+    public Float getGia() {
+        return gia;
     }
 
-    public void setPrice(Float price) {
-        this.price = price;
+    public void setGia(Float gia) {
+        this.gia = gia;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getSoLuong() {
+        return soLuong;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
     }
 
-    public int getStatus() {
-        return status;
+    public int getTrangThai() {
+        return trangThai;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setTrangThai(int trangThai) {
+        this.trangThai = trangThai;
     }
 
 }

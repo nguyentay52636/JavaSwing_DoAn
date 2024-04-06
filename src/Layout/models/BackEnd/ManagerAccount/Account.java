@@ -1,13 +1,13 @@
 package Layout.models.BackEnd.ManagerAccount;
 
 public class Account {
-    String userName, password, codeNV, codeQuyen;
+    String userName, password, maNV, maQuyen;
 
-    public Account(String userName, String password, String codeNV, String codeQuyen) {
+    public Account(String userName, String password, String maNV, String maQuyen) {
         this.userName = userName;
         this.password = password;
-        this.codeNV = codeNV;
-        this.codeQuyen = codeQuyen;
+        this.maNV = maNV;
+        this.maQuyen = maQuyen;
     }
 
     public String getUserName() {
@@ -26,20 +26,20 @@ public class Account {
         this.password = password;
     }
 
-    public String getCodeNV() {
-        return codeNV;
+    public String getMaNV() {
+        return maNV;
     }
 
-    public void setCodeNV(String codeNV) {
-        this.codeNV = codeNV;
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
     }
 
-    public String getCodeQuyen() {
-        return codeQuyen;
+    public String getMaQuyen() {
+        return maQuyen;
     }
 
-    public void setCodeQuyen(String codeQuyen) {
-        this.codeQuyen = codeQuyen;
+    public void setMaQuyen(String maQuyen) {
+        this.maQuyen = maQuyen;
     }
-    
+
 }
