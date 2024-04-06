@@ -3,48 +3,57 @@ package Layout.models.BackEnd.ManagerStaff;
 import java.time.LocalDate;
 
 public class Staff {
-    String codeNV, nameNV, address;
-    int status;
+    String maNV, tenNV, diaChi, soDT;
+    int trangThai;
     LocalDate birthDay;
 
-    public Staff(String codeNV, String nameNV, String address, int status, LocalDate birthDay) {
-        this.codeNV = codeNV;
-        this.nameNV = nameNV;
-        this.address = address;
-        this.status = status;
+    public Staff(String maNV, String tenNV, String diaChi, String soDT, int trangThai, LocalDate birthDay) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.diaChi = diaChi;
+        this.soDT = soDT;
+        this.trangThai = trangThai;
         this.birthDay = birthDay;
     }
 
-    public String getCodeNV() {
-        return codeNV;
+    public String getMaNV() {
+        return maNV;
     }
 
-    public void setCodeNV(String codeNV) {
-        this.codeNV = codeNV;
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
     }
 
-    public String getNameNV() {
-        return nameNV;
+    public String getTenNV() {
+        return tenNV;
     }
 
-    public void setNameNV(String nameNV) {
-        this.nameNV = nameNV;
+    public void setTenNV(String tenNV) {
+        this.tenNV = tenNV;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
-    public int getStatus() {
-        return status;
+    public String getSoDT() {
+        return soDT;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setSoDT(String soDT) {
+        this.soDT = soDT;
+    }
+
+    public int getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(int trangThai) {
+        this.trangThai = trangThai;
     }
 
     public LocalDate getBirthDay() {

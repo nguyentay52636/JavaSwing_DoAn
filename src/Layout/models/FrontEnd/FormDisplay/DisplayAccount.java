@@ -1,5 +1,5 @@
 package Layout.models.FrontEnd.FormDisplay;
 
-public class DisplayAccout {
+public class DisplayAccount {
     
 }
