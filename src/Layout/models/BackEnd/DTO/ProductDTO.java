@@ -1,12 +1,12 @@
 package Layout.models.BackEnd.DTO;
 
 
-public class Product {
+public class ProductDTO {
     String maSP, tenSP;
     Float gia;
     int soLuong, trangThai;
 
-    public Product(String maSP, String tenSP, Float gia, int soLuong, int trangThai) {
+    public ProductDTO(String maSP, String tenSP, Float gia, int soLuong, int trangThai) {
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.gia = gia;

@@ -2,12 +2,12 @@ package Layout.models.BackEnd.DTO;
 
 import java.time.LocalDate;
 
-public class Staff {
+public class StaffDTO {
     String maNV, tenNV, diaChi, soDT;
     int trangThai;
     LocalDate birthDay;
 
-    public Staff(String maNV, String tenNV, String diaChi, String soDT, int trangThai, LocalDate birthDay) {
+    public StaffDTO(String maNV, String tenNV, String diaChi, String soDT, int trangThai, LocalDate birthDay) {
         this.maNV = maNV;
         this.tenNV = tenNV;
         this.diaChi = diaChi;
