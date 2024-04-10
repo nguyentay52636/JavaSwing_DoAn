@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -15,24 +17,20 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import Layout.models.FrontEnd.NavigationBar.NavBarButton;
-import Layout.models.FrontEnd.NavigationBar.NavBarContrainer;
+import Layout.models.FrontEnd.NavigationBar.NavBarContainer;
 import Layout.models.FrontEnd.NavigationBar.NavBarSeperator;
 import Layout.models.FrontEnd.NavigationBar.NavBarTitle;
 
-public class MainLayout extends JFrame {
+public class MainLayout extends JFrame implements MouseListener {
     final int WIDTH = 1400, HEIGHT = 800;
+    int px, py;
+    NavBarContainer menu, header;
+    NavBarButton currentTab;
+    NavBarTitle headerTitle;
     JPanel plContent = new JPanel();
 
-    int px, py;
-    NavBarButton currentTab;
-    NavBarContrainer menu, header;
-    NavBarTitle headerTitle;
-
     public MainLayout() {
-        initializeUI();
-    }
 
-    private void initializeUI() {
         setLayout(new BorderLayout());
         setSize(WIDTH, HEIGHT);
         setTitle("Quản Lý Điện Thoại");
@@ -41,20 +39,10 @@ public class MainLayout extends JFrame {
         setLocationRelativeTo(null);
 
         ImageIcon logo = new ImageIcon(
-                getClass().getResource("../../../../images/icons8_windows_phone_store_30px.png"));
+                getClass().getResource("/src/Layout/images/icons8_windows_phone_store_30px.png"));
         setIconImage(logo.getImage());
-        createHeader();
-        // addMouseListener(this);
-        menu = new NavBarContrainer(new Rectangle(0, 0, WIDTH, HEIGHT));
 
-        add(menu, BorderLayout.WEST);
-        add(header, BorderLayout.NORTH);
-        add(plContent, BorderLayout.CENTER);
-        createMenu();
-
-    }
-
-    public void createMenu() {
+        // ======================== Menu =======================
         String[] navItemInfo = {
                 "seperate", "2", "", "",
                 "Bán hàng", "icons8_small_business_30px_3.png", "qlBanHang", "qlBanHang",
@@ -77,41 +65,50 @@ public class MainLayout extends JFrame {
                 "Công cụ", "icons8_maintenance_30px.png", "", "",
                 "Cài đặt", "icons8_settings_30px.png", "", ""
         };
-        int menuWidth = 300;
-        int menuHeight = 0;
-        menu = new NavBarContrainer(new Rectangle(0, 0, menuWidth, HEIGHT));
+
+        int menuW = 250;
+        int menuH = 0;
+        menu = new NavBarContainer(new Rectangle(0, 0, menuW, HEIGHT));
+        // menu.addItem(new NavBarTitle(new Rectangle(0, 0, 0, 55), "CHỨC NĂNG"));
         for (int i = 0; i < navItemInfo.length; i += 4) {
-            // Tạo phân cách cho menu
             if (navItemInfo[i].equals("seperate")) {
                 NavBarSeperator s = new NavBarSeperator(new Rectangle(0, 0, 0, Integer.parseInt(navItemInfo[i + 1])));
                 menu.addItem(s);
+
             } else {
-                // Tạo nút cho menu
+
+                // String chitietquyen = LoginForm.quyenLogin.getChiTietQuyen();
+                // if (chitietquyen.contains(navItemInfo[i + 2]) ||
+                // chitietquyen.contains(navItemInfo[i + 3])) {
+                // NavBarButton nb = new NavBarButton(new Rectangle(0, 0, 0, 60),
+                // navItemInfo[i], navItemInfo[i + 1]);
+                // nb.addMouseListener(this);
+                // menu.addItem(nb);
+                // menuH += 60;
+                // }
             }
         }
         JScrollPane scrollMenu = new JScrollPane(menu, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         menu.setAutoscrolls(true);
-        menu.setPreferredSize(new Dimension(menuWidth, menuHeight + 100));
-        scrollMenu.setPreferredSize(new Dimension(menuWidth, HEIGHT));
+        menu.setPreferredSize(new Dimension(menuW, menuH + 100));
+        scrollMenu.setPreferredSize(new Dimension(menuW, HEIGHT));
         scrollMenu.setBorder(BorderFactory.createEmptyBorder());
         scrollMenu.getVerticalScrollBar().setUnitIncrement(5);
-        add(scrollMenu, BorderLayout.WEST);
-    }
 
-    public void createHeader() {
+        // ================ Header ===================
         int headerBg = 30;
         int headerH = 55;
-        header = new NavBarContrainer(new Rectangle(0, 0, WIDTH, headerH));
+        header = new NavBarContainer(new Rectangle(0, 0, WIDTH, headerH));
         header.setBackground(new Color(headerBg, headerBg, headerBg));
 
-        headerTitle = new NavBarTitle(new Rectangle((WIDTH - 400) / 2, 0, 400, headerH), "QUẢN LÝ CỬA HÀNG ĐIỆN THOẠI");
+        headerTitle = new NavBarTitle(new Rectangle((WIDTH - 400) / 2, 0, 400, headerH), "QUẢN LÝ CỦA HÀNG ĐIỆN THOẠI");
         headerTitle.setColorDefault(new Color(200, 200, 200));
-
         headerTitle.setBgDefault(new Color(headerBg, headerBg, headerBg));
         headerTitle.setFontSize(23);
         header.addItem(headerTitle, false);
 
+        // Close Button
         int btnWidth = 50;
         int iconSize = 30;
         NavBarButton btnClose = new NavBarButton(new Rectangle(WIDTH - btnWidth, 0, btnWidth, headerH), "",
@@ -133,6 +130,8 @@ public class MainLayout extends JFrame {
             }
         });
         header.addItem(btnClose, false);
+
+        // Minimize Button
         NavBarButton btnMinimize = new NavBarButton(new Rectangle(WIDTH - btnWidth * 2, 0, btnWidth, headerH), "",
                 "icons8_angle_down_30px.png");
         btnMinimize.setIconLocation(
@@ -147,7 +146,10 @@ public class MainLayout extends JFrame {
             }
         });
         header.addItem(btnMinimize, false);
-        add(header, BorderLayout.NORTH);
+
+        // logout button
+
+        // ========= Draggable ===========
         header.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
@@ -155,13 +157,63 @@ public class MainLayout extends JFrame {
                 py = me.getY();
             }
         });
+
+        header.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent me) {
+                setLocation(getLocation().x + me.getX() - px, getLocation().y + me.getY() - py);
+            }
+        });
+
+        plContent.setLayout(new BorderLayout());
+        // plContent.add(
+
+        // BorderLayout.CENTER);
+
+        addMouseListener(this);
+        add(scrollMenu, BorderLayout.WEST);
+        add(header, BorderLayout.NORTH);
+        add(plContent, BorderLayout.CENTER);
     }
 
-    public void createContentPanel() {
+    private void logout() {
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+                "Bạn có chắc muốn đăng xuất khỏi " + "?", "Chú ý",
+                JOptionPane.YES_NO_OPTION);
 
     }
 
-    public void doAction() {
+    @Override
+    public void mouseReleased(MouseEvent me) {
+        if (me.getSource() instanceof NavBarButton) {
+
+            NavBarButton btn = (NavBarButton) me.getSource();
+            if (currentTab != null) {
+                currentTab.setActive(false);
+            }
+
+            btn.setActive(true);
+            currentTab = btn;
+            // doAction(btn.text);
+        }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent me) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent me) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent me) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent me) {
 
     }
 

@@ -19,8 +19,11 @@ public class NavBarButton extends NavBarItem {
         super(rec, text);
         this.bgHover = new Color(49, 49, 49);
         this.colorHover = new Color(255, 255, 255);
+
+        // icon
         setIconFromString(iconUrl);
 
+        // mouse event
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent me) {
@@ -56,9 +59,10 @@ public class NavBarButton extends NavBarItem {
         this.colorHover = colorHover;
     }
 
+    // ======== setup Icon ==========
     public void setIconFromString(String iconUrl) {
         lbIcon = new JLabel();
-        lbIcon.setIcon(new ImageIcon(getClass().getResource("../../../images/" + iconUrl)));
+        lbIcon.setIcon(new ImageIcon(getClass().getResource("layout/images/" + iconUrl)));
         add(lbIcon);
     }
 
@@ -80,6 +84,7 @@ public class NavBarButton extends NavBarItem {
         lbLabel.setBounds(rec.width / 4, rec.height / 4, rec.width * 3 / 4, (int) (rec.height / 1.75));
     }
 
+    // ======== active ==========
     public void setActive(Boolean stage) {
         this.actived = stage;
         if (this.actived) {
@@ -99,5 +104,4 @@ public class NavBarButton extends NavBarItem {
         this.actived = !this.actived;
         setActive(actived);
     }
-
 }

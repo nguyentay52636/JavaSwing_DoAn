@@ -31,7 +31,7 @@ public class LoginForm extends JFrame {
                 setTitle("Đăng nhập");
                 setSize(800, 600);
                 ImageIcon logo = new ImageIcon(
-                                getClass().getResource("../../../images/icons8_windows_phone_store_30px.png"));
+                                getClass().getResource("../../../../images/icons8_windows_phone_store_30px.png"));
                 setIconImage(logo.getImage());
                 initComponents();
                 setUndecorated(true);

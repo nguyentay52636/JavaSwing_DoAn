@@ -2,6 +2,7 @@ package Layout.models.BackEnd.ConnectDataBasee;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -71,15 +72,8 @@ public class ConnectionDB {
         }
     }
 
-    public static void main(String[] args) {
-        ConnectionDB connectionDB = new ConnectionDB();
-        if (connectionDB.conn != null) {
-            System.out.println("Kết nối thành công!");
-            ResultSet resultSet = connectionDB.executeQuery("SELECT * FROM TableName");
-            // Xử lý kết quả nếu cần thiết
-        } else {
-            System.out.println("Kết nối không thành công!");
-        }
-        connectionDB.close();
+    public PreparedStatement prepareStatement(String query) throws SQLException {
+        return conn.prepareStatement(query);
     }
+
 }

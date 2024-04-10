@@ -1,5 +1,5 @@
 package Layout.models.FrontEnd.FormDisplay;
 
-public class FormDisplay {
-
+public class DisplayProduct {
+    
 }
