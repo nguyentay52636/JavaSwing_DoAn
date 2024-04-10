@@ -1,13 +1,13 @@
 package Layout.models.BackEnd.DTO;
 
-public class Supplier {
+public class SupplierDTO {
     private String codeNCC;
     private String nameNCC;
     private String address;
     private String phoneNumber;
     private String Fax;
 
-    public Supplier(String codeNCC, String nameNCC, String address, String phoneNumber, String fax) {
+    public SupplierDTO(String codeNCC, String nameNCC, String address, String phoneNumber, String fax) {
         this.codeNCC = codeNCC;
         this.nameNCC = nameNCC;
         this.address = address;

@@ -1,9 +1,9 @@
 package Layout.models.BackEnd.DTO;
 
-public class Customer {
+public class CustomerDTO {
     String maKH, tenKH, diaChi, soDT, trangThai;
 
-    public Customer(String maKH, String tenKH, String diaChi, String soDT, String trangThai) {
+    public CustomerDTO(String maKH, String tenKH, String diaChi, String soDT, String trangThai) {
         this.maKH = maKH;
         this.tenKH = tenKH;
         this.diaChi = diaChi;

@@ -3,12 +3,12 @@ package Layout.models.BackEnd.DTO;
 
 import java.time.LocalDate;
 
-public class Promotion {
+public class PromotionDTO {
     String MaKM, TenKM;
     float DieuKienKM, PhanTramKM;
     LocalDate NgayBD, NgayKT;
 
-    public Promotion(String maKM, String tenKM, float dieuKienKM, float phanTramKM, LocalDate ngayBD,
+    public PromotionDTO(String maKM, String tenKM, float dieuKienKM, float phanTramKM, LocalDate ngayBD,
             LocalDate ngayKT) {
         MaKM = maKM;
         TenKM = tenKM;

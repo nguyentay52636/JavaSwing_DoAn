@@ -1,10 +1,10 @@
 package Layout.models.BackEnd.DTO;
 
 
-public class Permission {
+public class PermissionDTO {
     private String codePermission, detailPermission;
 
-    public Permission(String codePermission, String detailPermission) {
+    public PermissionDTO(String codePermission, String detailPermission) {
         this.codePermission = codePermission;
         this.detailPermission = detailPermission;
     }
