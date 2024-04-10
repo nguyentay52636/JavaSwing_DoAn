@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class NavBarItem extends JPanel {
+
     protected JLabel lbLabel;
     protected Color bgDefault, colorDefault;
     protected int fontSize = 16;
@@ -15,54 +16,37 @@ public class NavBarItem extends JPanel {
 
     public NavBarItem(Rectangle rec, String text) {
         this.bgDefault = new Color(35, 35, 35);
-        this.colorDefault = new Color(255, 255, 255);
+        this.colorDefault = new Color(150, 150, 150);
         this.text = text;
 
+        setLayout(null);
+        setBounds(rec);
+        setBackground(this.bgDefault);
+
         lbLabel = new JLabel(text);
-        lbLabel.setForeground(colorDefault);
-        lbLabel.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        lbLabel.setForeground(this.colorDefault);
+        setFontSize(fontSize);
         add(lbLabel);
 
+        setLabel(text);
     }
 
-    public JLabel getLbLabel() {
-        return lbLabel;
+    public void setLabel(String text) {
+        lbLabel.setText(text);
     }
 
-    public void setLbLabel(JLabel lbLabel) {
-        this.lbLabel = lbLabel;
-    }
-
-    public Color getBgDefault() {
-        return bgDefault;
+    public void setFontSize(int size) {
+        fontSize = size;
+        lbLabel.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
     }
 
     public void setBgDefault(Color bgDefault) {
         this.bgDefault = bgDefault;
-    }
-
-    public Color getColorDefault() {
-        return colorDefault;
+        setBackground(this.bgDefault);
     }
 
     public void setColorDefault(Color colorDefault) {
         this.colorDefault = colorDefault;
+        lbLabel.setForeground(this.colorDefault);
     }
-
-    public int getFontSize() {
-        return fontSize;
-    }
-
-    public void setFontSize(int fontSize) {
-        this.fontSize = fontSize;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
 }
