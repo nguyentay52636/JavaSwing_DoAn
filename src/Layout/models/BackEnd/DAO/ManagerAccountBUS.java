@@ -1,4 +1,4 @@
-package Layout.models.BackEnd.GUI;
+package Layout.models.BackEnd.DAO;
 
 public class ManagerAccountBUS {
 
