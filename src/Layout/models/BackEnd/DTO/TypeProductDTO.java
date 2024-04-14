@@ -1,36 +1,39 @@
 package Layout.models.BackEnd.DTO;
 
 public class TypeProductDTO {
-    String MaLSP, TenLSP, MoTa;
+    String maLoaiSanPham, tenLoaiSanPham, moTa;
 
-    public TypeProductDTO(String maLSP, String tenLSP, String moTa) {
-        MaLSP = maLSP;
-        TenLSP = tenLSP;
-        MoTa = moTa;
+    // public TypeProductDTO() {
+
+    // }
+
+    public TypeProductDTO(String maLoaiSanPham, String tenLoaiSanPham, String moTa) {
+        this.maLoaiSanPham = maLoaiSanPham;
+        this.tenLoaiSanPham = tenLoaiSanPham;
+        this.moTa = moTa;
     }
 
-    public String getMaLSP() {
-        return MaLSP;
+    public String getMaLoaiSanPham() {
+        return maLoaiSanPham;
     }
 
-    public void setMaLSP(String maLSP) {
-        MaLSP = maLSP;
+    public void setMaLoaiSanPham(String maLoaiSanPham) {
+        this.maLoaiSanPham = maLoaiSanPham;
     }
 
-    public String getTenLSP() {
-        return TenLSP;
+    public String getTenLoaiSanPham() {
+        return tenLoaiSanPham;
     }
 
-    public void setTenLSP(String tenLSP) {
-        TenLSP = tenLSP;
+    public void setTenLoaiSanPham(String tenLoaiSanPham) {
+        this.tenLoaiSanPham = tenLoaiSanPham;
     }
 
     public String getMoTa() {
-        return MoTa;
+        return moTa;
     }
 
     public void setMoTa(String moTa) {
-        MoTa = moTa;
+        this.moTa = moTa;
     }
-
 }
