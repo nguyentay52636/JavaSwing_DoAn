@@ -1,13 +1,14 @@
 package Layout.models.BackEnd.DTO;
 
 public class CustomerDTO {
-    String maKH, tenKH, diaChi, soDT, trangThai;
+    String maKH, tenKh, diaChi, sdt;
+    int trangThai;
 
-    public CustomerDTO(String maKH, String tenKH, String diaChi, String soDT, String trangThai) {
+    public CustomerDTO(String maKH, String tenKh, String diaChi, String sdt, int trangThai) {
         this.maKH = maKH;
-        this.tenKH = tenKH;
+        this.tenKh = tenKh;
         this.diaChi = diaChi;
-        this.soDT = soDT;
+        this.sdt = sdt;
         this.trangThai = trangThai;
     }
 
@@ -19,12 +20,12 @@ public class CustomerDTO {
         this.maKH = maKH;
     }
 
-    public String getTenKH() {
-        return tenKH;
+    public String getTenKh() {
+        return tenKh;
     }
 
-    public void setTenKH(String tenKH) {
-        this.tenKH = tenKH;
+    public void setTenKh(String tenKh) {
+        this.tenKh = tenKh;
     }
 
     public String getDiaChi() {
@@ -35,20 +36,19 @@ public class CustomerDTO {
         this.diaChi = diaChi;
     }
 
-    public String getSoDT() {
-        return soDT;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setSoDT(String soDT) {
-        this.soDT = soDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
-    public String getTrangThai() {
+    public int getTrangThai() {
         return trangThai;
     }
 
-    public void setTrangThai(String trangThai) {
+    public void setTrangThai(int trangThai) {
         this.trangThai = trangThai;
     }
-
 }

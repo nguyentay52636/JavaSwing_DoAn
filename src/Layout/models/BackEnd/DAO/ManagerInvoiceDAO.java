@@ -22,7 +22,7 @@ public class ManagerInvoiceDAO {
         ArrayList<InvoiceDTO> listOrder = new ArrayList<>();
 
         try {
-            String query = "SELECT * FROM Invoice";
+            String query = "SELECT * FROM invoice";
             ResultSet resultSet = connection.sqlQuery(query);
             if (resultSet != null) {
                 while (resultSet.next()) {
@@ -48,7 +48,7 @@ public class ManagerInvoiceDAO {
 
     public boolean addInvoice(InvoiceDTO invoice) {
         connection = new ConnectionDB();
-        String query = "INSERT INTO Invoice(MaHD, MaNV, MaKH, NgayLap, GioLap, TongTien) VALUES('" +
+        String query = "INSERT INTO invoice(MaHD, MaNV, MaKH, NgayLap, GioLap, TongTien) VALUES('" +
                 invoice.getMaHoadon() + "','" +
                 invoice.getMaNhanVien() + "','" +
                 invoice.getMaKhachHang() + "','" +
@@ -63,7 +63,7 @@ public class ManagerInvoiceDAO {
 
     public boolean deleteInvoice(String idInvoice) {
         connection = new ConnectionDB();
-        Boolean result = connection.sqlUpdate("DELETE FROM Invoice WHERE MAHD = '" + idInvoice + "'");
+        Boolean result = connection.sqlUpdate("DELETE FROM invoicevv WHERE MAHD = '" + idInvoice + "'");
         if (!result) {
             JOptionPane.showMessageDialog(null, "Vui long xoa het chi tiet cua hoa don truoc !!!");
             connection.closeConnection();
@@ -77,7 +77,7 @@ public class ManagerInvoiceDAO {
 
     public boolean update(InvoiceDTO invoice) {
         connection = new ConnectionDB();
-        Boolean success = connection.sqlUpdate("UPDATE hoadon SET "
+        Boolean success = connection.sqlUpdate("UPDATE invoice SET "
                 + "MaNV='" + invoice.getMaNhanVien()
                 + "', MaKH='" + invoice.getMaKhachHang()
                 + "', MaKM='" + invoice.getMaKhuyenMai()
@@ -92,7 +92,7 @@ public class ManagerInvoiceDAO {
     public boolean InvoiceTotalAmountDAO(String idInvoice, Float totalAmount) {
         connection = new ConnectionDB();
         Boolean success = connection
-                .sqlUpdate("UPDATE hoadon SET TongTien='" + totalAmount + "' WHERE MaHD='" + idInvoice + "';");
+                .sqlUpdate("UPDATE invoice SET TongTien='" + totalAmount + "' WHERE MaHD='" + idInvoice + "';");
         connection.closeConnection();
         return success;
 
