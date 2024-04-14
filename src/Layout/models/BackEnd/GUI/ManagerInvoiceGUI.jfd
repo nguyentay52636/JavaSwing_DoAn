@@ -1,0 +1,184 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "panel8"
+			"foreground": new java.awt.Color( 204, 204, 204, 255 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "action"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+					name: "btnPanel"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button15"
+						"text": "xuất Excel"
+						"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_ms_excel_30px.png" )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button16"
+						"text": "Nhập Excel"
+						"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_ms_excel_30px.png" )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button18"
+						"text": "In PDF"
+						"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_agreement_30px.png" )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "North"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+					name: "searchPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "search"
+						"border": new javax.swing.border.TitledBorder( "Tìm kiếm" )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "optionSearch"
+							"maximumRowCount": 10
+							"minimumSize": new java.awt.Dimension( 100, 30 )
+							"preferredSize": new java.awt.Dimension( 90, 45 )
+							"alignmentX": 2.5f
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField1"
+							"minimumSize": new java.awt.Dimension( 120, 30 )
+							"preferredSize": new java.awt.Dimension( 120, 45 )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "dateCreate"
+						"border": new javax.swing.border.TitledBorder( "Ngày lập" )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField3"
+							"border": new javax.swing.border.TitledBorder( "Từ:" )
+							"preferredSize": new java.awt.Dimension( 100, 45 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label1"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/Layout/images/icons8_calendar_31_30px.png" )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField2"
+							"border": new javax.swing.border.TitledBorder( "Đến:" )
+							"preferredSize": new java.awt.Dimension( 90, 45 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label2"
+							"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_calendar_31_30px.png" )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "panel11"
+						"cursor": new java.awt.Cursor( 12 )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "button20"
+							"text": "Xem chi tiết"
+							"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_show_property_30px.png" )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "button19"
+							"text": "Làm mới"
+							"icon": new com.jformdesigner.model.SwingIcon( 1, "/Users/m1lt43/Desktop/DoAnJavaSwing/javaSwing/src/Layout/images/icons8_data_backup_30px.png" )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "North"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "TableInvoice"
+					"cellSelectionEnabled": true
+					"dragEnabled": true
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( class java.lang.Object )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( true )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1075, 740 )
+		} )
+	}
+}
